@@ -1,0 +1,370 @@
+/* Philosophy Interactive Styles */
+
+/* Quotes Section */
+.philosophy-quotes {
+    position: relative;
+    margin: var(--space-xl) 0;
+    height: 200px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    overflow: hidden;
+}
+
+.philosophy-quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.philosophy-quote cite {
+    display: block;
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Ethical Dilemma */
+.ethical-dilemma {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dilemma-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.option {
+    padding: var(--space-lg);
+    background: white;
+    border-radius: 6px;
+    border: 1px solid var(--light-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-color-light);
+}
+
+.option h4 {
+    color: var(--text-color);
+    margin-bottom: var(--space-sm);
+}
+
+.option p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.option-explanation {
+    margin-top: var(--space-lg);
+    padding: var(--space-lg);
+    background: white;
+    border-radius: 6px;
+    border: 1px solid var(--light-gray);
+    animation: slideIn 0.3s ease-out;
+}
+
+.option-explanation h4 {
+    color: var(--text-color);
+    margin-bottom: var(--space-md);
+}
+
+.option-explanation p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.option-explanation ul {
+    list-style-type: disc;
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.option-explanation li {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+/* Thought Experiments */
+.experiments-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.thought-experiment {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experiment-content {
+    display: grid;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.experiment-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.experiment-interactive {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 6px;
+    border: 1px solid var(--light-gray);
+}
+
+/* Chinese Room */
+.room-simulation {
+    display: grid;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.input-slot input {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.processing-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    height: 100px;
+}
+
+.rulebook,
+.processor {
+    width: 60px;
+    height: 60px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    position: relative;
+}
+
+.processor.processing {
+    animation: process 1s infinite;
+}
+
+@keyframes process {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Philosophical Zombie */
+.zombie-simulation {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.entity-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: var(--space-lg);
+}
+
+.entity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.entity-visual {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    position: relative;
+}
+
+.consciousness-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0.5;
+}
+
+.entity.acting .entity-visual {
+    animation: pulse 2s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.behavior-panel {
+    text-align: center;
+}
+
+.behavior-display {
+    margin-top: var(--space-md);
+    padding: var(--space-sm);
+    background: var(--light-gray);
+    border-radius: 4px;
+    min-height: 40px;
+}
+
+/* Experience Machine */
+.machine-simulation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.reality-view,
+.simulation-view {
+    padding: var(--space-md);
+    background: var(--light-gray);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.simulated .simulation-view {
+    background: var(--accent-color-light);
+}
+
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+    margin: var(--space-md) 0;
+}
+
+.experience-list li {
+    padding: var(--space-xs) 0;
+    color: var(--text-secondary);
+}
+
+.choice-interface {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Common Elements */
+.experiment-question {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--light-gray);
+}
+
+.response-options {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.response-options button {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    background: white;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.response-options button:hover {
+    background: var(--light-gray);
+}
+
+.response-options button.selected {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .philosophy-quotes {
+        height: 250px;
+    }
+
+    .philosophy-quote {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .dilemma-options {
+        grid-template-columns: 1fr;
+    }
+
+    .option {
+        padding: var(--space-md);
+    }
+
+    .machine-simulation {
+        grid-template-columns: 1fr;
+    }
+
+    .response-options {
+        flex-direction: column;
+    }
+
+    .response-options button {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .philosophy-quote,
+    .option,
+    .option-explanation,
+    .processor,
+    .entity-visual,
+    .reality-view,
+    .simulation-view {
+        transition: none;
+        animation: none;
+    }
+}

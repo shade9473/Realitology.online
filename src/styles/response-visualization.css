@@ -1,0 +1,234 @@
+/* Response Visualization Styles */
+
+.response-visualization {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.response-visualization h4 {
+    color: var(--text-color);
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+}
+
+/* Chart Styles */
+.visualization-chart {
+    margin: var(--space-lg) 0;
+}
+
+.response-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.chart-bar {
+    height: 30px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-sm);
+    transition: width 0.3s ease;
+}
+
+.bar-label {
+    color: white;
+    font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+/* Stats Styles */
+.visualization-stats {
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+    background: var(--bg-secondary);
+    border-radius: 6px;
+}
+
+.response-stats {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.response-stats p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Insights Styles */
+.visualization-insights {
+    margin-top: var(--space-lg);
+}
+
+.response-insights h5 {
+    color: var(--text-color);
+    margin-bottom: var(--space-sm);
+    font-size: 1.1rem;
+}
+
+.response-insights ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.response-insights li {
+    color: var(--text-secondary);
+    padding: var(--space-xs) 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.response-insights li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: var(--space-sm);
+}
+
+/* Loading State */
+.visualization-loading {
+    text-align: center;
+    padding: var(--space-lg);
+    color: var(--text-secondary);
+}
+
+/* No Data State */
+.visualization-empty {
+    text-align: center;
+    padding: var(--space-lg);
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Export Controls */
+.export-controls {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.export-controls h4 {
+    color: var(--text-color);
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+}
+
+.export-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.export-button {
+    padding: var(--space-sm) var(--space-lg);
+    background: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.export-button::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.export-button[data-format="json"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm3 14V7H6v10h2zm3 0V7H9v10h2zm3 0V7h-2v10h2zm3 0V7h-2v10h2z'/%3E%3C/svg%3E");
+}
+
+.export-button[data-format="csv"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z'/%3E%3C/svg%3E");
+}
+
+.export-button[data-format="report"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z M14 17h-4v-2h4v2z M17 13H7v-2h10v2z M17 9H7V7h10v2z'/%3E%3C/svg%3E");
+}
+
+.export-button:hover {
+    background: var(--light-gray);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.export-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .response-visualization {
+        padding: var(--space-md);
+    }
+
+    .bar-label {
+        font-size: 0.8rem;
+    }
+
+    .response-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .export-controls {
+        padding: var(--space-md);
+    }
+
+    .export-buttons {
+        flex-direction: column;
+    }
+
+    .export-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .bar-fill {
+        transition: none;
+    }
+
+    .export-button {
+        transition: none;
+        transform: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .bar-label {
+        text-shadow: none;
+    }
+
+    .response-insights li::before {
+        color: currentColor;
+    }
+
+    .export-button {
+        border-width: 2px;
+    }
+}

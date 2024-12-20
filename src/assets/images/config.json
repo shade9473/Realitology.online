@@ -1,0 +1,42 @@
+{
+    "optimization": {
+        "svg": {
+            "plugins": [
+                { "removeViewBox": false },
+                { "removeDimensions": true },
+                { "cleanupIDs": true }
+            ]
+        },
+        "raster": {
+            "formats": ["webp", "jpg"],
+            "sizes": [
+                {
+                    "width": 320,
+                    "suffix": "-sm"
+                },
+                {
+                    "width": 768,
+                    "suffix": "-md"
+                },
+                {
+                    "width": 1024,
+                    "suffix": "-lg"
+                },
+                {
+                    "width": 1920,
+                    "suffix": "-xl"
+                }
+            ],
+            "quality": {
+                "webp": 80,
+                "jpg": 85
+            }
+        }
+    },
+    "paths": {
+        "patterns": "/assets/images/patterns/",
+        "icons": "/assets/icons/",
+        "content": "/assets/images/content/",
+        "favicon": "/assets/favicon/"
+    }
+}

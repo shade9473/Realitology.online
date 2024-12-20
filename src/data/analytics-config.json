@@ -1,0 +1,105 @@
+{
+    "tracking": {
+        "pageViews": {
+            "enabled": true,
+            "excludePaths": [
+                "/privacy",
+                "/terms",
+                "/admin"
+            ]
+        },
+        "events": {
+            "scroll": {
+                "enabled": true,
+                "thresholds": [25, 50, 75, 100]
+            },
+            "socialShare": {
+                "enabled": true,
+                "platforms": [
+                    "twitter",
+                    "facebook",
+                    "linkedin",
+                    "email"
+                ]
+            },
+            "engagement": {
+                "enabled": true,
+                "metrics": [
+                    "timeOnPage",
+                    "linkClicks",
+                    "copyLink"
+                ]
+            },
+            "search": {
+                "enabled": true,
+                "trackSuggestions": true
+            }
+        },
+        "customDimensions": {
+            "contentType": {
+                "enabled": true,
+                "values": [
+                    "article",
+                    "blog",
+                    "landing"
+                ]
+            },
+            "theme": {
+                "enabled": true,
+                "values": [
+                    "ai-reality",
+                    "consciousness",
+                    "philosophy"
+                ]
+            },
+            "author": {
+                "enabled": true
+            }
+        }
+    },
+    "privacy": {
+        "cookieless": true,
+        "ipAnonymization": true,
+        "doNotTrack": true,
+        "retentionDays": 30,
+        "gdprCompliant": true
+    },
+    "reporting": {
+        "realtime": {
+            "enabled": true,
+            "refreshInterval": 10
+        },
+        "automated": {
+            "enabled": true,
+            "schedule": "daily",
+            "recipients": []
+        },
+        "customReports": {
+            "contentPerformance": {
+                "metrics": [
+                    "pageViews",
+                    "timeOnPage",
+                    "scrollDepth",
+                    "socialShares"
+                ],
+                "dimensions": [
+                    "contentType",
+                    "theme",
+                    "author"
+                ]
+            },
+            "userEngagement": {
+                "metrics": [
+                    "linkClicks",
+                    "searches",
+                    "socialShares"
+                ],
+                "dimensions": [
+                    "deviceType",
+                    "referrer",
+                    "location"
+                ]
+            }
+        }
+    }
+}

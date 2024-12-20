@@ -1,0 +1,172 @@
+/* Filter Presets Styles */
+
+.preset-section {
+    margin-bottom: var(--space-lg);
+    padding: var(--space-lg);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Preset Selector */
+.preset-selector {
+    margin-bottom: var(--space-lg);
+}
+
+.preset-selector label {
+    display: block;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+}
+
+.preset-selector select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background: white;
+    cursor: pointer;
+}
+
+/* Custom Preset Form */
+.custom-preset-form {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--light-gray);
+}
+
+.custom-preset-form h5 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0 0 var(--space-md);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xs);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background: white;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.save-preset-button {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-preset-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.save-preset-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Preset List */
+.preset-list {
+    margin-top: var(--space-md);
+}
+
+.preset-item {
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.preset-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.preset-item h6 {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0 0 var(--space-xs);
+}
+
+.preset-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.preset-item.custom {
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Loading State */
+.preset-section.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .preset-section {
+        padding: var(--space-md);
+    }
+
+    .custom-preset-form {
+        padding-top: var(--space-md);
+    }
+
+    .save-preset-button {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .save-preset-button,
+    .preset-item {
+        transition: none;
+        transform: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .preset-selector select,
+    .form-group input,
+    .form-group textarea {
+        border-width: 2px;
+    }
+
+    .save-preset-button {
+        border: 2px solid var(--accent-color);
+    }
+
+    .preset-item.custom {
+        border-left-width: 4px;
+    }
+}

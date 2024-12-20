@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg-gradient" x1="0" y1="0" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a365d"/>
+            <stop offset="100%" style="stop-color:#7f9cf5"/>
+        </linearGradient>
+        
+        <!-- Philosophy Pattern -->
+        <pattern id="philosophy-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <circle cx="30" cy="30" r="1" fill="white" opacity="0.3"/>
+            <line x1="30" y1="0" x2="30" y2="60" stroke="white" stroke-width="0.5" opacity="0.1"/>
+            <line x1="0" y1="30" x2="60" y2="30" stroke="white" stroke-width="0.5" opacity="0.1"/>
+            <circle cx="30" cy="30" r="15" fill="none" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        </pattern>
+        
+        <!-- Philosophy Symbol -->
+        <symbol id="philosophy-icon" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2"/>
+            <path d="M30 35h40M30 50h40M30 65h40" stroke="white" stroke-width="2"/>
+            <circle cx="25" cy="35" r="2" fill="white"/>
+            <circle cx="25" cy="50" r="2" fill="white"/>
+            <circle cx="25" cy="65" r="2" fill="white"/>
+        </symbol>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+    <rect width="1200" height="630" fill="url(#philosophy-pattern)"/>
+    
+    <!-- Content -->
+    <g transform="translate(100, 180)">
+        <!-- Title -->
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="64" font-weight="bold" fill="white">
+            Philosophical Implications of AI
+        </text>
+        
+        <!-- Subtitle -->
+        <text x="0" y="100" font-family="Inter, sans-serif" font-size="32" fill="white" opacity="0.9">
+            Ethics, Existence, and Evolution
+        </text>
+        
+        <!-- Author -->
+        <text x="0" y="180" font-family="Inter, sans-serif" font-size="24" fill="white" opacity="0.8">
+            By Elijah Teal · Realitology.online
+        </text>
+    </g>
+    
+    <!-- Philosophy Icon -->
+    <use href="#philosophy-icon" x="900" y="265" width="200" height="200"/>
+    
+    <!-- Logo -->
+    <g transform="translate(100, 500)">
+        <circle cx="25" cy="25" r="25" fill="white" opacity="0.9"/>
+        <path d="M25 10l-15 7.5L25 25l15-7.5L25 10z" fill="#1a365d"/>
+        <path d="M10 32.5L25 40l15-7.5M10 25L25 32.5 40 25" stroke="#1a365d" stroke-width="2"/>
+    </g>
+</svg>

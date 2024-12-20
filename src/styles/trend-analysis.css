@@ -1,0 +1,183 @@
+/* Trend Analysis Styles */
+
+.trend-visualization {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trend-visualization h4 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin: 0 0 var(--space-lg);
+}
+
+/* Time Range Selector */
+.time-range-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.time-range-selector label {
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.time-range-selector select {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background: white;
+    cursor: pointer;
+}
+
+/* Trend Chart */
+.trend-chart-container {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.trend-chart-container h5 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0 0 var(--space-lg);
+}
+
+.trend-chart {
+    position: relative;
+    height: 300px;
+    padding: var(--space-md);
+    border: 1px solid var(--light-gray);
+    background: white;
+    border-radius: 4px;
+}
+
+.trend-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.trend-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    transform: translate(-50%, 50%);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.trend-point:hover {
+    transform: translate(-50%, 50%) scale(1.5);
+    z-index: 10;
+}
+
+/* Response Type Colors */
+.trend-line.yes .trend-point { background: var(--success-color); }
+.trend-line.no .trend-point { background: var(--error-color); }
+.trend-line.observable .trend-point { background: var(--info-color); }
+.trend-line.impossible .trend-point { background: var(--warning-color); }
+.trend-line.reality .trend-point { background: var(--primary-color); }
+.trend-line.simulation .trend-point { background: var(--secondary-color); }
+
+/* Insights Section */
+.trend-insights {
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.trend-insights h5 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0 0 var(--space-lg);
+}
+
+.trend-insights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.insight-item {
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.insight-item.pattern {
+    background: var(--info-light);
+    color: var(--info-dark);
+    border: 1px solid var(--info-border);
+}
+
+.insight-item.growth {
+    background: var(--success-light);
+    color: var(--success-dark);
+    border: 1px solid var(--success-border);
+}
+
+.insight-item.changes {
+    background: var(--warning-light);
+    color: var(--warning-dark);
+    border: 1px solid var(--warning-border);
+}
+
+.insight-item.insufficient_data {
+    background: var(--light-gray);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .trend-visualization {
+        padding: var(--space-md);
+    }
+
+    .time-range-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+
+    .trend-chart {
+        height: 200px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .trend-point {
+        transition: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .trend-chart {
+        border-width: 2px;
+    }
+
+    .trend-point {
+        border: 2px solid var(--text-color);
+    }
+
+    .insight-item {
+        border-width: 2px;
+    }
+}

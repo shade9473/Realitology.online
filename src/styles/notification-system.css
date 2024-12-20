@@ -1,0 +1,183 @@
+/* Notification System Styles */
+
+.notification-container {
+    position: fixed;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    pointer-events: none;
+}
+
+/* Notification */
+.notification {
+    width: 320px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    pointer-events: auto;
+    animation: slideIn 0.3s ease forwards;
+}
+
+/* Notification Types */
+.notification-info {
+    border-left: 4px solid var(--info-color);
+}
+
+.notification-success {
+    border-left: 4px solid var(--success-color);
+}
+
+.notification-warning {
+    border-left: 4px solid var(--warning-color);
+}
+
+.notification-error {
+    border-left: 4px solid var(--error-color);
+}
+
+/* Notification Content */
+.notification-content {
+    padding: var(--space-md);
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+}
+
+.notification-header h6 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.notification p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Close Button */
+.notification-close {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.notification-close:hover {
+    opacity: 1;
+}
+
+.notification-close svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+/* Action Buttons */
+.notification-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.notification-action {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.notification-action:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification-dismissing {
+    animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .notification-container {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: var(--space-md);
+    }
+
+    .notification {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .notification {
+        animation: none;
+        transform: none !important;
+    }
+
+    .notification-dismissing {
+        animation: none;
+        opacity: 0;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .notification {
+        border-width: 2px;
+        box-shadow: none;
+    }
+
+    .notification-action {
+        border-width: 2px;
+    }
+
+    .notification-close {
+        border: 2px solid currentColor;
+    }
+}

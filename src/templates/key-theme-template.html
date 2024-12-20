@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>{{page_title}} | Realitology.online</title>
+    <meta name="description" content="{{page_description}}">
+    <meta name="keywords" content="{{page_keywords}}">
+    <meta name="author" content="{{page_author}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://realitology.online/{{page_slug}}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{page_title}} | Realitology.online">
+    <meta property="og:description" content="{{page_description}}">
+    <meta property="og:image" content="{{page_image}}">
+    <meta property="og:url" content="https://realitology.online/{{page_slug}}">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{page_title}} | Realitology.online">
+    <meta name="twitter:description" content="{{page_description}}">
+    <meta name="twitter:image" content="{{page_image}}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{page_title}}",
+        "description": "{{page_description}}",
+        "image": "{{page_image}}",
+        "author": {
+            "@type": "Person",
+            "name": "{{page_author}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Realitology.online",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://realitology.online/assets/images/logo.png"
+            }
+        },
+        "datePublished": "{{page_published_date}}",
+        "dateModified": "{{page_modified_date}}"
+    }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/theme-pages.css">
+    <link rel="stylesheet" href="/styles/interactive.css">
+    <link rel="stylesheet" href="/styles/comments.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2QZYJ13HZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P2QZYJ13HZ');
+    </script>
+</head>
+<body data-page-type="theme" data-theme="{{page_theme}}" data-author="{{page_author}}">
+    <!-- Header -->
+    <header class="site-header">
+        <!-- Navigation will be included here -->
+        {{> navigation}}
+    </header>
+
+    <!-- Main Content -->
+    <main class="theme-content">
+        <!-- Hero Section -->
+        <section class="theme-hero" style="background-image: url('{{page_hero_image}}')">
+            <div class="hero-content">
+                <h1>{{page_title}}</h1>
+                <p class="hero-description">{{page_hero_description}}</p>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="theme-introduction">
+            <div class="container">
+                <div class="introduction-content">
+                    {{page_introduction}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Sections -->
+        <article class="theme-article">
+            <div class="container">
+                <!-- Content sections will be dynamically added here -->
+                {{#each content_sections}}
+                <section class="content-section" id="{{this.id}}">
+                    <h2>{{this.title}}</h2>
+                    <div class="section-content">
+                        {{this.content}}
+                    </div>
+                    {{#if this.interactive}}
+                    <div class="interactive-element" data-type="{{this.interactive.type}}">
+                        {{this.interactive.content}}
+                    </div>
+                    {{/if}}
+                </section>
+                {{/each}}
+            </div>
+        </article>
+
+        <!-- FAQ Section -->
+        <section class="theme-faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    {{#each faqs}}
+                    <div class="faq-item">
+                        <h3>{{this.question}}</h3>
+                        <p>{{this.answer}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+            <div class="container">
+                <h2>Related Articles</h2>
+                <div class="articles-grid">
+                    {{#each related_articles}}
+                    <article class="article-card">
+                        <img src="{{this.image}}" alt="{{this.title}}">
+                        <div class="article-content">
+                            <h3>{{this.title}}</h3>
+                            <p>{{this.excerpt}}</p>
+                            <a href="{{this.url}}" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <div class="container">
+                <h2>Discussion</h2>
+                <div id="comments-container">
+                    <!-- Comments will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <!-- Footer content will be included here -->
+        {{> footer}}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/scripts/theme-interactive.js" defer></script>
+    <script src="/scripts/comments.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize interactive elements
+            const interactive = new ThemeInteractive();
+            interactive.init();
+
+            // Initialize comments
+            const comments = new Comments('comments-container');
+            comments.load();
+        });
+    </script>
+</body>
+</html>

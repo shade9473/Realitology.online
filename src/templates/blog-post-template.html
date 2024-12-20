@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>{{post_title}} | Realitology.online Blog</title>
+    <meta name="description" content="{{post_description}}">
+    <meta name="keywords" content="{{post_keywords}}">
+    <meta name="author" content="{{post_author}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://realitology.online/blog/{{post_slug}}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{post_title}} | Realitology.online Blog">
+    <meta property="og:description" content="{{post_description}}">
+    <meta property="og:image" content="{{post_featured_image}}">
+    <meta property="og:url" content="https://realitology.online/blog/{{post_slug}}">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{post_title}} | Realitology.online Blog">
+    <meta name="twitter:description" content="{{post_description}}">
+    <meta name="twitter:image" content="{{post_featured_image}}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{post_title}}",
+        "description": "{{post_description}}",
+        "image": "{{post_featured_image}}",
+        "author": {
+            "@type": "Person",
+            "name": "{{post_author}}",
+            "url": "https://realitology.online/authors/{{post_author_slug}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Realitology.online",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://realitology.online/assets/images/logo.png"
+            }
+        },
+        "datePublished": "{{post_published_date}}",
+        "dateModified": "{{post_modified_date}}",
+        "keywords": "{{post_keywords}}",
+        "articleSection": "{{post_category}}",
+        "articleBody": "{{post_content}}"
+    }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/blog.css">
+    <link rel="stylesheet" href="/styles/comments.css">
+    <link rel="stylesheet" href="/styles/syntax-highlight.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2QZYJ13HZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P2QZYJ13HZ');
+    </script>
+</head>
+<body data-page-type="blog" data-category="{{post_category}}" data-author="{{post_author}}">
+    <!-- Header -->
+    <header class="site-header">
+        <!-- Navigation will be included here -->
+        {{> navigation}}
+    </header>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="post-meta">
+                    <span class="post-category">{{post_category}}</span>
+                    <span class="post-date">{{post_published_date}}</span>
+                </div>
+                <h1 class="post-title">{{post_title}}</h1>
+                <div class="post-subtitle">{{post_subtitle}}</div>
+                <div class="post-author">
+                    <img src="{{post_author_avatar}}" alt="{{post_author}}" class="author-avatar">
+                    <div class="author-info">
+                        <span class="author-name">{{post_author}}</span>
+                        <span class="read-time">{{post_read_time}} min read</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Image -->
+        <section class="featured-image">
+            <div class="container">
+                <figure>
+                    <img src="{{post_featured_image}}" alt="{{post_featured_image_alt}}">
+                    <figcaption>{{post_featured_image_caption}}</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="post-article">
+            <div class="container">
+                <!-- Table of Contents -->
+                <aside class="table-of-contents">
+                    <h2>Contents</h2>
+                    <nav>
+                        {{post_table_of_contents}}
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="post-content">
+                    {{post_content}}
+                </div>
+
+                <!-- Tags -->
+                <div class="post-tags">
+                    {{#each post_tags}}
+                    <a href="/blog/tag/{{this}}" class="tag">{{this}}</a>
+                    {{/each}}
+                </div>
+
+                <!-- Share Buttons -->
+                <div class="share-buttons">
+                    <h3>Share this article</h3>
+                    <div class="share-grid">
+                        <button class="share-twitter">Twitter</button>
+                        <button class="share-facebook">Facebook</button>
+                        <button class="share-linkedin">LinkedIn</button>
+                        <button class="share-copy">Copy Link</button>
+                    </div>
+                </div>
+
+                <!-- Author Bio -->
+                <section class="author-bio">
+                    <img src="{{post_author_avatar}}" alt="{{post_author}}" class="author-avatar">
+                    <div class="author-details">
+                        <h3>{{post_author}}</h3>
+                        <p>{{post_author_bio}}</p>
+                        <div class="author-social">
+                            {{#each post_author_social}}
+                            <a href="{{this.url}}" class="social-link {{this.platform}}">
+                                {{this.platform}}
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+
+        <!-- Related Posts -->
+        <section class="related-posts">
+            <div class="container">
+                <h2>Related Posts</h2>
+                <div class="posts-grid">
+                    {{#each related_posts}}
+                    <article class="post-card">
+                        <img src="{{this.image}}" alt="{{this.title}}">
+                        <div class="post-card-content">
+                            <span class="post-category">{{this.category}}</span>
+                            <h3>{{this.title}}</h3>
+                            <p>{{this.excerpt}}</p>
+                            <a href="{{this.url}}" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-signup">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Get the latest articles and insights delivered to your inbox.</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <div class="container">
+                <h2>Discussion</h2>
+                <div id="comments-container">
+                    <!-- Comments will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <!-- Footer content will be included here -->
+        {{> footer}}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/scripts/blog-interactive.js" defer></script>
+    <script src="/scripts/comments.js" defer></script>
+    <script src="/scripts/share-buttons.js" defer></script>
+    <script src="/scripts/newsletter.js" defer></script>
+    <script src="/scripts/syntax-highlight.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize syntax highlighting
+            SyntaxHighlight.init();
+
+            // Initialize comments
+            const comments = new Comments('comments-container');
+            comments.load();
+
+            // Initialize share buttons
+            ShareButtons.init();
+
+            // Initialize newsletter
+            Newsletter.init();
+        });
+    </script>
+</body>
+</html>
